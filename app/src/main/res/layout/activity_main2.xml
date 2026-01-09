@@ -25,15 +25,15 @@
             android:textStyle="bold" />
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="462dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/white"
             app:cardCornerRadius="28dp"
             app:cardElevation="2dp"
-            app:strokeColor="@color/primary"
-            android:backgroundTint="@color/white">
+            app:strokeColor="@color/primary">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view"
