@@ -1,519 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#87D39B43"
-    android:clipToPadding="false"
-    android:scrollbars="none"
-    tools:context=".MainActivity2">
+    android:background="@color/background"
+    android:paddingBottom="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp">
+        android:layout_marginTop="24dp"
+        android:text="Adopt a Friend"
+        android:textColor="@color/text_primary"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Card 1: Header -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+    <!-- Search Bar -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+         app:layout_constraintTop_toBottomOf="@id/title"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:queryHint="Search for a location" />
+
+    <!-- Choose animal label -->
+    <TextView
+        android:id="@+id/choose_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Choose an animal"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Animal Tabs (simple horizontal buttons) -->
+    <LinearLayout
+        android:id="@+id/animal_tabs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/choose_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cats"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#2F8A4C15"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="0dp">
+            android:layout_weight="1"
+            android:text="Cats"
+            android:textColor="@color/primary"
+            app:strokeColor="#698C5D"
+            app:cornerRadius="20dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hello"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📍Strays near me"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Card 2: Actions and Quick Links -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_dogs"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/p4"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="0dp">
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Dogs"
+            android:textColor="@color/primary"
+            app:strokeColor="@color/primary"
+            app:cornerRadius="20dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp">
-
-                <!-- First Line: 3 Thin Cards -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:weightSum="3">
-
-                    <!-- Thin Card 1 -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="6dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="#8D8A4C15"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="🟢   Adopt"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:textSize="15dp"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Thin Card 2 -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="#8D8A4C15"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="🔴   Injured"
-                                android:textSize="15dp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <!-- Thin Card 3 -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="#8D8A4C15"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="🔵  Lost pets"
-                                android:textSize="15dp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                </LinearLayout>
-
-                <!-- Second Line: 4 Image Buttons -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="Dogs"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_emergency" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="Cats"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_location" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="Birds"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_scan" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="others"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_profile" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Main Content: List of Detailed Cards -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_birds"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <!-- DETAILED CARD 1 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <!-- FIX 1: Changed orientation to horizontal -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!-- Image now takes up the full height -->
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="240dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dog1"
-                        android:padding="15dp"
-                        app:shapeAppearanceOverlay="@style/rounded_image_view_left" />
-
-                    <!-- FIX 2: All text and buttons are now in their own vertical layout -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Animal id : STR-0268"
-                            android:textColor="#8A4C15"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <!-- Inner thin card -->
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            app:cardBackgroundColor="#8A4C15"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:padding="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:paddingEnd="2dp"
-                                    android:text="🟢  Adopt"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/white" />
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <!-- Bottom part with Circle Buttons -->
-                        <!-- FIX 3: Removed the unnecessary left margin -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Adopt"
-                                android:background="@drawable/adopt"
-                                android:scaleType="centerCrop"/>
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Chat"
-                                android:background="@drawable/location"
-                                android:scaleType="fitCenter"/>
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Call NGO"
-                                android:background="@drawable/contact"
-                                android:scaleType="centerCrop"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <!-- DETAILED CARD 2 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <!-- FIX 1: Changed orientation to horizontal -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!-- Image now takes up the full height -->
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="240dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:padding="15dp"
-                        android:background="@color/brown"
-                        android:src="@drawable/dog2"
-                        app:shapeAppearanceOverlay="@style/rounded_image_view_left" />
-
-                    <!-- FIX 2: All text and buttons are now in their own vertical layout -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Animal id : STR-0270"
-                            android:textColor="#8A4C15"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <!-- Inner thin card -->
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            app:cardBackgroundColor="#8A4C15"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:padding="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:paddingEnd="2dp"
-                                    android:text="🟢  Adopt"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <!-- Bottom part with Circle Buttons -->
-                        <!-- FIX 3: Removed the unnecessary left margin -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Call"
-                                android:background="@drawable/adopt"
-                                android:scaleType="centerCrop"/>
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Location"
-                                android:background="@drawable/location"
-                                android:scaleType="centerCrop"/>
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Call NGO"
-                                android:background="@drawable/contact" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-
-
-            <!-- DETAILED CARD 1 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <!-- FIX 1: Changed orientation to horizontal -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!-- Image now takes up the full height -->
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="240dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:padding="15dp"
-                        android:src="@drawable/cat1"
-                        app:shapeAppearanceOverlay="@style/rounded_image_view_left" />
-
-                    <!-- FIX 2: All text and buttons are now in their own vertical layout -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Animal id : STR-0271"
-                            android:textColor="#8A4C15"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <!-- Inner thin card -->
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            app:cardBackgroundColor="#8A4C15"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:padding="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:paddingEnd="2dp"
-                                    android:text="🔴 Injured"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <!-- Bottom part with Circle Buttons -->
-                        <!-- FIX 3: Removed the unnecessary left margin -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Call"
-                                android:background="@drawable/adopt" />
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Location"
-                                android:background="@drawable/location"
-                                android:scaleType="fitCenter"/>
-
-                            <ImageButton
-                                style="@style/icon_image_style"
-                                android:contentDescription="Call NGO"
-                                android:background="@drawable/contact" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-            <!-- You can copy and paste the DETAILED CARD view here to add more items -->
-
-        </LinearLayout>
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Birds"
+            android:textColor="@color/primary"
+            app:strokeColor="@color/primary"
+            app:cornerRadius="20dp" />
     </LinearLayout>
-</ScrollView>
+
+    <!-- Pet Cards - All included directly -->
+
+    <!-- Pet Card 1 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pet1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/animal_tabs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pet1_image"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cat1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/pet1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="Animal ID: STR-021"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet1_image" />
+
+            <TextView
+                android:id="@+id/pet1_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="Distance (2km)"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet1_name"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Action icons -->
+            <ImageView
+                android:id="@+id/icon_contact"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/stat_sys_phone_call"
+                app:tint="#A67D9D72"
+                app:layout_constraintEnd_toStartOf="@id/get_location"
+                app:layout_constraintTop_toTopOf="@id/pet1_name" />
+
+            <ImageView
+                android:id="@+id/get_location"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                app:tint="@color/primary"
+                app:layout_constraintEnd_toStartOf="@id/icon_share1"
+                app:layout_constraintTop_toTopOf="@id/pet1_name" />
+
+            <ImageView
+                android:id="@+id/icon_share1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_share"
+                app:tint="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pet1_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Pet Card 2 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pet2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/card_pet1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pet2_image"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dog1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/pet2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="Animal ID: STR-022"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet2_image" />
+
+            <TextView
+                android:id="@+id/pet2_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="Distance (1.3km)"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet2_name"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Icons same as above -->
+            <ImageView
+                android:id="@+id/icon_contact2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/stat_sys_phone_call"
+                app:tint="#A67D9D72"
+                app:layout_constraintEnd_toStartOf="@id/get_location2"
+                app:layout_constraintTop_toTopOf="@id/pet2_name" />
+
+            <ImageView
+                android:id="@+id/get_location2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                app:tint="@color/primary"
+                app:layout_constraintEnd_toStartOf="@id/icon_share2"
+                app:layout_constraintTop_toTopOf="@id/pet2_name" />
+
+            <ImageView
+                android:id="@+id/icon_share2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_share"
+                app:tint="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pet2_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

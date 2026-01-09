@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">PawConnect</string>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/accent</item>
+        <item name="colorOnPrimary">@color/card_background</item>
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
+    <style name="CardStyle">
+        <item name="android:background">@color/card_background</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/card_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
 </resources>
