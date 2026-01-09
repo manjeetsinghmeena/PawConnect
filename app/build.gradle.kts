@@ -7,6 +7,9 @@ android {
     namespace = "com.example.pawconnect"
     compileSdk = 36
 
+    buildFeatures{
+        viewBinding= true
+    }
     defaultConfig {
         applicationId = "com.example.pawconnect"
         minSdk = 24
