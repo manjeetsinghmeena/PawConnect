@@ -15,7 +15,6 @@
         android:paddingBottom="20dp">
 
         <TextView
-            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -295,8 +294,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <!-- FIX 1: Changed ID from pet2_name to pet3_name -->
-                <!-- FIX 2: Corrected the layout constraint -->
                 <TextView
                     android:id="@+id/pet3_name"
                     android:layout_width="wrap_content"
