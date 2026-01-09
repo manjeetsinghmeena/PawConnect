@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
-        <!-- Title -->
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
             android:textSize="26sp"
             android:textStyle="bold" />
 
-        <!-- Search Bar -->
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
@@ -34,10 +32,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-
             app:queryHint="Search for a location" />
 
-        <!-- Choose animal label -->
         <TextView
             android:id="@+id/choose_label"
             android:layout_width="wrap_content"
@@ -49,7 +45,6 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Animal Tabs (simple horizontal buttons) -->
         <LinearLayout
             android:id="@+id/animal_tabs"
             android:layout_width="match_parent"
@@ -95,7 +90,6 @@
                 app:strokeColor="@color/primary" />
         </LinearLayout>
 
-        <!-- Pet Card 1 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_pet1"
             android:layout_width="match_parent"
@@ -148,7 +142,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/pet1_name" />
 
-                <!-- Action icons -->
                 <ImageView
                     android:id="@+id/icon_contact"
                     android:layout_width="28dp"
@@ -181,7 +174,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Pet Card 2 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_pet2"
             android:layout_width="match_parent"
@@ -234,7 +226,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/pet2_name" />
 
-                <!-- Icons same as above -->
                 <ImageView
                     android:id="@+id/icon_contact2"
                     android:layout_width="28dp"
@@ -307,8 +298,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/pet3_image" />
 
-                <!-- FIX 1: Changed ID from pet2_distance to pet3_distance -->
-                <!-- FIX 3: Corrected the layout constraint -->
                 <TextView
                     android:id="@+id/pet3_distance"
                     android:layout_width="wrap_content"
@@ -323,7 +312,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/pet3_name" />
 
-                <!-- FIX 1 & 4: Corrected all IDs and constraints for the icons -->
                 <ImageView
                     android:id="@+id/icon_contact3"
                     android:layout_width="28dp"
@@ -355,7 +343,5 @@
                     app:tint="@color/primary" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
-
     </LinearLayout>
 </ScrollView>
