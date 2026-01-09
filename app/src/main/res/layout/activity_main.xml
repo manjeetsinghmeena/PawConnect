@@ -21,7 +21,6 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="81dp"
         android:layout_height="81dp"
-
         android:background="@drawable/saviour"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
