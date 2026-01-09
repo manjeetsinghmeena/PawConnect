@@ -10,10 +10,10 @@
     <color name="p5">#dc9728</color>
     <color name="off_white">#FAFAFA</color>
     <color name="brown2">#6D4C41</color>
-    <color name="background">#F0F4EF</color>
+    <color name="background">#F5F0EA</color>
     <color name="card_background">#FFFFFF</color>
-    <color name="primary">#7D9D72</color>
-    <color name="accent">#A8BDA0</color>
+    <color name="primary">#8B6F47</color>
+    <color name="accent">#A68A64</color>
     <color name="text_primary">#333333</color>
     <color name="text_secondary">#666666</color>
     <color name="shadow">#20000000</color>

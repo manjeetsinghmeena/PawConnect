@@ -25,14 +25,27 @@
             android:textSize="26sp"
             android:textStyle="bold" />
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="462dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            app:queryHint="Search for a location" />
+            app:cardCornerRadius="28dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/primary"
+            android:backgroundTint="@color/white">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:queryHint="Search for a location" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/choose_label"
@@ -63,7 +76,7 @@
                 android:text="Cats"
                 android:textColor="@color/primary"
                 app:cornerRadius="20dp"
-                app:strokeColor="#698C5D" />
+                app:strokeColor="@color/primary" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_dogs"
@@ -150,7 +163,7 @@
                     android:src="@android:drawable/stat_sys_phone_call"
                     app:layout_constraintEnd_toStartOf="@id/get_location"
                     app:layout_constraintTop_toTopOf="@id/pet1_name"
-                    app:tint="#A67D9D72" />
+                    app:tint="@color/primary" />
 
                 <ImageView
                     android:id="@+id/get_location"
@@ -234,7 +247,7 @@
                     android:src="@android:drawable/stat_sys_phone_call"
                     app:layout_constraintEnd_toStartOf="@id/get_location2"
                     app:layout_constraintTop_toTopOf="@id/pet2_name"
-                    app:tint="#A67D9D72" />
+                    app:tint="@color/primary" />
 
                 <ImageView
                     android:id="@+id/get_location2"
@@ -320,7 +333,7 @@
                     android:src="@android:drawable/stat_sys_phone_call"
                     app:layout_constraintEnd_toStartOf="@id/get_location3"
                     app:layout_constraintTop_toTopOf="@id/pet3_name"
-                    app:tint="#A67D9D72" />
+                    app:tint="@color/primary" />
 
                 <ImageView
                     android:id="@+id/get_location3"
